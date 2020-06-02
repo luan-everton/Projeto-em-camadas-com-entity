@@ -1,0 +1,159 @@
+﻿@{
+
+}
+@if (Session["NOME"] != null)
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    @model IEnumerable<Cadastro.Model.ProcessoModel>
+    <h3>Seja bem vindo(a), @Session["NOME"].ToString()!</h3>
+    ViewBag.Title = "Home";
+
+
+    @section nav
+       {
+        @Html.ActionLink("Sair", "LogOut", "Login", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("Historico", "Historico", "Historico", new { area = "" }, new { @class = "navbar-brand" })
+
+
+
+    }
+
+
+    <div>
+
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayName("ID_Processo")</th>
+                    <th>@Html.DisplayName("Cidade")</th>
+                    <th>@Html.DisplayNameFor(m => m.nome)</th>
+                    <th>@Html.DisplayNameFor(m => m.cpf)</th>
+                    <th>@Html.DisplayNameFor(m => m.Data_nascimento)</th>
+                    <th>@Html.DisplayNameFor(m => m.email)</th>
+                    <th>@Html.DisplayNameFor(m => m.endereco)</th>
+                    <th>@Html.DisplayNameFor(m => m.cep)</th>
+                    <th>@Html.DisplayNameFor(m => m.bairro)</th>
+                    <th>@Html.DisplayNameFor(m => m.celular)</th>
+                    <th>@Html.DisplayNameFor(m => m.sexo)</th>
+                    <th>@Html.DisplayName("Status")</th>
+                    <th>@Html.DisplayName("Opções")</th>
+                    <td></td>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var proc in Model)
+                {
+                <tr>
+                    <td>@proc.ID_Processo</td>
+                    <td>@proc.Cidade.Nome</td>
+                    <td>@proc.nome</td>
+                    <td>@proc.cpf</td>
+                    <td>@proc.Data_nascimento</td>
+                    <td>@proc.email</td>
+                    <td>@proc.endereco</td>
+                    <td>@proc.cep</td>
+                    <td>@proc.bairro</td>
+                    <td>@proc.celular</td>
+                    <td>@proc.sexo</td>
+                    <td>@proc.StatusModel.Status_Atual</td>
+
+
+
+                    @if (proc.ID_status == 1 || proc.ID_status == 4)
+                    {
+                        <td>
+                            <div class="btn-group dropup">
+                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Opcões
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    @Html.ActionLink("Editar", "EditarProcesso", "Processo", new { id = proc.ID_Processo }, new { @class = "dropdown-item" })
+                                    @Html.ActionLink("Excluir", "ExcluirProcesso", "Processo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que quer excluir?');", @class = "dropdown-item" })
+                                    @Html.ActionLink("Enc Gerente", "EncaminhaGerente", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja encaminhar ao gerente?');", @class = "dropdown-item" })
+
+                                </div>
+                            </div>
+                        </td>
+                    }
+                    @if (proc.ID_status == 6)
+                    {
+                <td>
+
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opcões
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @Html.ActionLink("Aprovar", "AprovaGerente", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja aprovar esse processo?');", @class = "dropdown-item" })
+                            @Html.ActionLink("Reprovar", "ReprovarProcesso", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja reprovar esse processo?');", @class = "dropdown-item" })
+                            @Html.ActionLink("Correcao", "CorrecaoProcesso", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja encaminhar ao gerente?');", @class = "dropdown-item" })
+
+                        </div>
+                    </div>
+
+                    @*@Html.ActionLink("Aprovar|", "AprovaGerente", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja aprovar esse processo ?');" })
+                    @Html.ActionLink("Reprovar|", "ReprovarProcesso", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja reprovar esse processo ?');" })
+                    @Html.ActionLink("Correcao", "CorrecaoProcesso", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja pedir a correcao desse processo?');" })*@
+
+                </td>
+                    }
+
+                    @if (proc.ID_status == 7)
+                    {
+
+                <td>
+
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opcões
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @Html.ActionLink("Aprovar", "AprovaProcesso", "Fluxo", new { id = proc.ID_Processo }, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Reprovar", "ReprovarProcesso", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja reprovar esse processo?');", @class = "dropdown-item" })
+                            @Html.ActionLink("Correcao", "CorrecaoProcesso", "Fluxo", new { id = proc.ID_Processo }, new { onclick = "return confirm('Tem certeza que deseja pedir a correção de processo?');", @class = "dropdown-item" })
+
+                        </div>
+                    </div>
+                </td>
+                    }
+                    @if (proc.ID_status == 2 || proc.ID_status == 3)
+                    { 
+                        <td></td>
+                    }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button>@Html.ActionLink("Novo Cadastro", "Index", "Processo")</button>
+
+
+
+    </div>
+
+    @section scripts{
+        <script>
+            function change(event) {
+                let id = event.id;
+                let novoStatus = event.value;
+
+                atualizaStatus({ id, novoStatus });
+            }
+
+            function atualizaStatus(informacao) {
+
+                $.ajax({
+                    url: '/Home/AtualizaStatus',
+                    type: 'Post',
+                    contentType: 'application/json',
+                    data: JSON.stringify(informacao)
+                })
+            }
+
+        </script>
+    }
+
+}

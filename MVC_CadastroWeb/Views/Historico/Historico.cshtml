@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Cadastro_Model.Usuario_ProcessoModel>
+
+@{
+    ViewBag.Title = "Historico";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Historico</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_PROCESSO)
+        </th>
+        <th>
+            @Html.DisplayName("NOME")
+        </th>
+        <th>
+            @Html.DisplayName("STATUS")
+        </th>
+        <th>
+            @Html.DisplayName("USUARIO")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_saida)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_PROCESSO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Processo.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.Status_Atual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_entrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_saida)
+            </td>
+        </tr>
+
+
+    }
+
+</table>
+<div>
+    <button> @Html.ActionLink("Voltar a Home", "PaginaHome", "Home")</button>
+</div>

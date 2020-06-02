@@ -1,0 +1,6 @@
+C:\Users\lnoi\source\projetosC#\Cadastro.Model\obj\Debug\Cadastro_Model.csprojAssemblyReference.cache
+C:\Users\lnoi\source\projetosC#\Cadastro.Model\obj\Debug\Cadastro_Model.csproj.CoreCompileInputs.cache
+C:\Users\lnoi\source\projetosC#\Cadastro.Model\bin\Debug\Cadastro_Model.dll
+C:\Users\lnoi\source\projetosC#\Cadastro.Model\bin\Debug\Cadastro_Model.pdb
+C:\Users\lnoi\source\projetosC#\Cadastro.Model\obj\Debug\Cadastro_Model.dll
+C:\Users\lnoi\source\projetosC#\Cadastro.Model\obj\Debug\Cadastro_Model.pdb

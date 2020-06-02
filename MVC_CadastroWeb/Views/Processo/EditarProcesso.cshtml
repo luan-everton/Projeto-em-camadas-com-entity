@@ -1,0 +1,191 @@
+﻿@{
+
+}
+
+@if (Session["NOME"] != null)
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    @model  Cadastro.Model.ProcessoModel
+
+    <h3>Seja bem vindo(a), @Session["NOME"].ToString()!</h3>
+    ViewBag.Title = "Editar Processo";
+    <h2>EditarProcesso</h2>
+
+
+    using (Html.BeginForm("EditarProcesso", "Processo", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="form-group">
+
+
+            @Html.LabelFor(model => model.ID_Processo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_Processo, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.ID_Processo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.StatusModel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_status, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                @Html.ValidationMessageFor(model => model.ID_status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Pais</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Cidade.estado.pais, new SelectList(ViewBag.GetPais, "ID_PAIS", "NOME"), "-- Selecione o pais --", new { @class = "form-control", @id = "GetPais" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Estado</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Cidade.estado, new SelectList(ViewBag.GetEstado, "ID_ESTADO", "NOME"), "-- Selecione o estado --", new { @class = "form-control", @id = "GetEstado" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Cidade</label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.Cidade.ID_CIDADE, new SelectList(ViewBag.GetCidade, "ID_CIDADE", "NOME"), "-- Selecione a cidade --", new { @class = "form-control", @id = "GetCidade" })
+            </div>
+        </div>
+
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.cpf, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.endereco, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.endereco, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.endereco, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.bairro, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.cep, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cep, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cep, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.sexo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.sexo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.sexo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.celular, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.celular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.celular, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group" id="data">
+                @Html.LabelFor(model => model.Data_nascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Data_nascimento, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Data_nascimento, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Salvar" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div>
+        <button> @Html.ActionLink("Voltar a Home", "PaginaHome", "Home")</button>
+    </div>
+
+    @section scripts
+{
+
+
+        <script>
+
+        $(function () {
+            $('#GetPais').change(
+                function () {
+                    $.getJSON('@Url.Action("GetEstado")',   {
+                        id_Pais: $(this).val()
+                    }, function (data, isSuccess) {
+                        $('#GetEstado').html("");
+                        if (isSuccess == "success") {
+                            $.each(data, function (i, v) {
+                                $('#GetEstado').append('<option value="' + v.Value + '">' + v.Text + '</option>');
+                            })
+                        }
+                        });
+                }
+            );
+
+
+
+            $('#GetEstado').change(
+                function () {
+                    $.getJSON('@Url.Action("GetCidade")',   {
+                        id_Estado: $(this).val()
+                    }, function (data, isSuccess) {
+                        $('#GetCidade').html("");
+                        if (isSuccess == "success") {
+                            $.each(data, function (i, v) {
+                                $('#GetCidade').append('<option value="' + v.Value + '">' + v.Text + '</option>');
+                            })
+                        }
+                        });
+                }
+            );
+        })
+        </script>
+    }
+
+}

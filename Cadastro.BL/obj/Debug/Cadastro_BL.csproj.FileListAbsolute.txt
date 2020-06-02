@@ -1,0 +1,11 @@
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\bin\Debug\Cadastro.BL.dll
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\bin\Debug\Cadastro.BL.pdb
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\bin\Debug\Cadastro.Dao.dll
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\bin\Debug\Cadastro.Dao.pdb
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\obj\Debug\Cadastro_BL.csprojAssemblyReference.cache
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\obj\Debug\Cadastro_BL.csproj.CoreCompileInputs.cache
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\obj\Debug\Cadastro_BL.csproj.CopyComplete
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\obj\Debug\Cadastro.BL.dll
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\obj\Debug\Cadastro.BL.pdb
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\bin\Debug\Cadastro_Model.dll
+C:\Users\lnoi\source\projetosC#\Cadastro.BL\bin\Debug\Cadastro_Model.pdb

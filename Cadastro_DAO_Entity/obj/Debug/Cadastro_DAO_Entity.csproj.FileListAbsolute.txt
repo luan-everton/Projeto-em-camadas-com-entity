@@ -1,0 +1,17 @@
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\obj\Debug\Cadastro_DAO_Entity.csprojAssemblyReference.cache
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\obj\Debug\Cadastro_DAO_Entity.csproj.CoreCompileInputs.cache
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro_DAO_Entity.dll.config
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro_DAO_Entity.dll
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro_DAO_Entity.pdb
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro_Model.dll
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\EntityFramework.dll
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro_Model.pdb
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\EntityFramework.xml
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\obj\Debug\Cadastro_DAO_Entity.csproj.CopyComplete
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\obj\Debug\Cadastro_DAO_Entity.dll
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\obj\Debug\Cadastro_DAO_Entity.pdb
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro_Model.dll.config
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro.Util.dll
+C:\Users\lnoi\source\projetosC#\Cadastro_DAO_Entity\bin\Debug\Cadastro.Util.pdb
